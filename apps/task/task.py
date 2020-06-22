@@ -3,11 +3,13 @@
 
 from models.task import Order
 from loguru import logger
+from utils.database.mysql import MysqlPoolSync
 
 def order_handler(**kwargs):
 
-    db = kwargs.get("db")
     orderid = kwargs.get("orderid")
+
+    db = MysqlPoolSync().get_conn
 
     logger.info("订单号{}".format(orderid))
     with db.atomic():

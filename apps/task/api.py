@@ -16,7 +16,6 @@ class Order(BaseHandler):
         self.scheduler.add_job(order_handler, 'date',
                               run_date=runTime.datetime,
                               kwargs={
-                                  "db":self.db,
                                   "orderid":self.data.get("orderid",None)
                               })
 

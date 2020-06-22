@@ -33,7 +33,7 @@ class Server(object):
         # apps.redis = RedisPool(loop=loop).get_conn()
         #
         #初始化mysql
-        apps.mysql = MysqlPoolSync().get_conn
+        # apps.mysql = MysqlPoolSync().get_conn
 
         return apps
 
