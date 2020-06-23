@@ -23,7 +23,8 @@ class MysqlPool:
                 max_connections=mysql['max_connections'],
                 charset=mysql['charset'])
             cls.manager = Manager(cls.conn)
-            cls.conn.set_allow_sync(False)
+            # cls.conn.set_allow_sync(False)
+            cls.conn.set_allow_sync(True)
             cls._instance = super(MysqlPool, cls).__new__(cls, *args, **kwargs)
         return cls._instance
 
@@ -43,8 +44,8 @@ class MysqlPoolSync:
             database=mysql['name'],
             host=mysql['host'],
             password=mysql['password'],
-            # min_connections=mysql['min_connections'],
-            # max_connections=mysql['max_connections'],
+            min_connections=mysql['min_connections'],
+            max_connections=mysql['max_connections'],
             port=mysql['port'],
             user=mysql['user'])
         return conn

@@ -9,7 +9,7 @@ from apscheduler.schedulers.tornado import TornadoScheduler
 from loguru import logger
 from router import urlpattern
 from config import common
-from utils.database.mysql import MysqlPoolSync
+from utils.database.mysql import MysqlPool
 
 class Server(object):
 
@@ -33,7 +33,7 @@ class Server(object):
         # apps.redis = RedisPool(loop=loop).get_conn()
         #
         #初始化mysql
-        # apps.mysql = MysqlPoolSync().get_conn
+        apps.mysql = MysqlPool().get_manager
 
         return apps
 
