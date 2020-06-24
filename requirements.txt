@@ -13,3 +13,4 @@ peewee-async==0.6.0a0
 apscheduler
 pyotp
 cryptokit
+requests
