@@ -11,7 +11,7 @@ class Order(BaseHandler):
 
         ut = UtilTime()
 
-        runTime = ut.today.shift(seconds=int(self.application.settings.get("ordertime",1)))
+        runTime = ut.today.shift(minutes=int(self.application.settings.get("ordertime",1)))
 
         self.scheduler.add_job(order_handler, 'date',
                               run_date=runTime.datetime,
