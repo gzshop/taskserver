@@ -6,7 +6,7 @@ common=dict(
     debug = False,
     basedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     port = 9999,
-    ordertime = int(os.environ.get('ORDERTIME', 1)),
+    ordertime = int(os.environ.get('ORDERTIME', 30)),
     busiserver = os.environ.get("BUSIURL","http://localhost:9018/v2/api"),
     # busiServer = "http://localhost:9888"
 )
